@@ -1,6 +1,6 @@
 """Testing the Calculator"""
-from calculator.calculator import Calculator
 import pytest
+from calculator.calculator import Calculator
 
 def test_calculator_result():
     """testing calculator result is 0"""
@@ -8,6 +8,7 @@ def test_calculator_result():
     assert calc.result == 0
 
 def test_calculator_add():
+    """ tests the addition between 2 numbers """
     assert Calculator.add_number(5, 5)
 
 def test_calculator_get_result():

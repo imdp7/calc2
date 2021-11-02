@@ -5,25 +5,25 @@ class Calculator:
     result = 0
 
     @staticmethod
-    def add_number(a, b):
+    def add_number(val_a, val_b):
         """ adds number to result"""
-        return a + b
+        return val_a + val_b
 
     @staticmethod
-    def subtract_number(a, b):
+    def subtract_number(val_a, val_b):
         """ subtract number from result"""
-        return a - b
+        return val_a - val_b
 
     @staticmethod
-    def multiply_numbers(a, b):
+    def multiply_numbers(val_a, val_b):
         """ multiply two numbers and store the result"""
-        return a * b
+        return val_a * val_b
 
     @staticmethod
-    def divide_numbers(a,b):
+    def divide_numbers(val_a, val_b):
         """divide two numbers and store the result"""
-        return a / b
+        return val_a / val_b
 
-    @staticmethod
-    def get_result(result):
-        return result
+    def get_result(self):
+        """ return the result of a calculation """
+        return self.result

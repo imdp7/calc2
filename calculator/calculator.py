@@ -1,61 +1,38 @@
 """ This is the increment function"""
-from individual_calc.addition import Addition
-from individual_calc.subtraction import Subtraction
-from individual_calc.multiplication import Multiplication
-from individual_calc.division import Division
+from calculator.calculations.addition import Addition
+from calculator.calculations.subtraction import Subtraction
+from calculator.calculations.multiplication import Multiplication
+from calculator.calculations.division import Division
+from calculator.history.calculations import Calculation
 
 
 class Calculator:
     """ This is the Calculator class"""
-    history = []
 
     @staticmethod
-    def first_calc_to_history():
-        """ adds the first calculation to history """
-        return Calculator.history[0].get_result()
-
-    @staticmethod
-    def empty_history():
-        """ clears history function """
-        Calculator.history.clear()
-        return True
-
-    @staticmethod
-    def history_count():
-        """ however many calculations have been stored in the array """
-        return len(Calculator.history)
-
-    @staticmethod
-    def add_to_history(calculation):
-        """ adds the calculation to history when called """
-        Calculator.history.append(calculation)
-        return True
-
-    @staticmethod
-    def last_calc_to_history():
-        """ returns the last calc in the array """
-        return Calculator.history[-1].get_result()
-
-    @staticmethod
-    def add_number(val_a, val_b):
+    def add_number(*args):
         """ adds number to result"""
-        Calculator.add_to_history(Addition.create(val_a, val_b))
-        return Calculator.last_calc_to_history()
+        calculation = Addition(args)
+        Calculation.add_to_history(calculation)
+        return calculation.get_result()
 
     @staticmethod
-    def subtract_number(val_a, val_b):
+    def subtract_number(*args):
         """ subtract number from result"""
-        Calculator.add_to_history(Subtraction.create(val_a, val_b))
-        return Calculator.last_calc_to_history()
+        calculation = Subtraction(args)
+        Calculation.add_to_history(calculation)
+        return calculation.get_result()
 
     @staticmethod
-    def multiply_numbers(val_a, val_b):
+    def multiply_numbers(*args):
         """ multiply two numbers and store the result"""
-        Calculator.add_to_history(Multiplication.create(val_a, val_b))
-        return Calculator.last_calc_to_history()
+        calculation = Multiplication(args)
+        Calculation.add_to_history(calculation)
+        return calculation.get_result()
 
     @staticmethod
-    def divide_numbers(val_a, val_b):
+    def divide_numbers(*args):
         """divide two numbers and store the result"""
-        Calculator.add_to_history(Division.create(val_a, val_b))
-        return Calculator.last_calc_to_history()
+        calculation = Division(args)
+        Calculation.add_to_history(calculation)
+        return calculation.get_result()

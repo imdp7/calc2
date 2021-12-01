@@ -7,6 +7,6 @@ class Addition(Calculation):
     def get_result(self):
         """ adds two numbers """
         sum_of_vals = 0.0
-        for value in self.vals:
-            sum_of_vals = value + sum_of_vals
+        for value in self.values:
+            sum_of_vals = float(value) + sum_of_vals
         return sum_of_vals

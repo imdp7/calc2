@@ -7,6 +7,6 @@ class Multiplication(Calculation):
     def get_result(self):
         """ multiplies two numbers """
         result = 1.0
-        for value in self.vals:
-            result = result * value
+        for value in self.values:
+            result = float(value) * result
         return result

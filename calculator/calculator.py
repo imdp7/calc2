@@ -1,8 +1,4 @@
 """ This is the increment function"""
-from calculator.calculations.addition import Addition
-from calculator.calculations.subtraction import Subtraction
-from calculator.calculations.multiplication import Multiplication
-from calculator.calculations.division import Division
 from calculator.history.calculations import Calculation
 
 
@@ -10,29 +6,30 @@ class Calculator:
     """ This is the Calculator class"""
 
     @staticmethod
-    def add_number(*args):
+    def add_number(tuple_values: tuple):
         """ adds number to result"""
-        calculation = Addition(args)
-        Calculation.add_to_history(calculation)
-        return calculation.get_result()
+        Calculation.add_addition(tuple_values)
+        return True
 
     @staticmethod
-    def subtract_number(*args):
+    def subtract_number(tuple_values: tuple):
         """ subtract number from result"""
-        calculation = Subtraction(args)
-        Calculation.add_to_history(calculation)
-        return calculation.get_result()
+        Calculation.add_subtraction(tuple_values)
+        return True
 
     @staticmethod
-    def multiply_numbers(*args):
+    def multiply_numbers(tuple_values: tuple):
         """ multiply two numbers and store the result"""
-        calculation = Multiplication(args)
-        Calculation.add_to_history(calculation)
-        return calculation.get_result()
+        Calculation.add_multiplication(tuple_values)
+        return True
 
     @staticmethod
-    def divide_numbers(*args):
+    def divide_numbers(tuple_values: tuple):
         """divide two numbers and store the result"""
-        calculation = Division(args)
-        Calculation.add_to_history(calculation)
-        return calculation.get_result()
+        Calculation.add_division(tuple_values)
+        return True
+
+    @staticmethod
+    def get_last_calc():
+        """ Retrieving the last calculation stored """
+        return Calculation.get_last_calc()

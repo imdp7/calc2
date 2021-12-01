@@ -1,19 +1,24 @@
 """ Subtraction Tests """
+# pylint disable=E1136
 import os
 import pandas as pd
+import main as log
 
 from calculator.calculations.subtraction import Subtraction
 
 file_path = os.path.dirname(os.path.realpath(__file__))
 
-def subtraction_test_calculation():
-    """" testing static method for subtraction """
-    # Arrange
-    active_file = os.path.join(file_path, "Subtraction Data 1.csv")
-    dframe = pd.read_csv(active_file, names=["A", "B", "C"])
-    # Act
-    for i, row in dframe.iterrows():
-        vals = (row.A, row.B)
-        subtract = Subtraction.create(vals)
-    # Assert
-        assert subtract.get_result() == dframe["C"][i]
+
+def test_calculation_subtraction():
+    """ testing csv subtraction functionality """
+    #Arrange
+    filename = "infile/Subtraction Data 1.csv"
+    path = os.path.join(file_path, filename)
+    d_frame = pd.read_csv(path)
+    for i, row in d_frame.iterrows():
+        values = (row.valuea, row.valueb)
+        subtract = Subtraction.create(values)
+        subtract_result = d_frame["valuec"][i]
+        log.output_data(filename, row.valuea, "-", row.valueb, subtract_result)
+        assert subtract.get_result() == subtract_result
+    print("Your Subtraction CSV file has been verified successfully")

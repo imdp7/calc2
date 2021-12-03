@@ -1,7 +1,6 @@
 """Testing the Calculator"""
 import pytest
 from calculator.calculator import Calculator
-<<<<<<< HEAD
 from calculator.history.calculations import Calculation
 
 

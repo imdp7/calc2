@@ -48,7 +48,7 @@ class Calculation:
     @staticmethod
     def get_last_calc():
         """ Returns the last calculation stored """
-        last_calc = Calculation.get_last_calc()
+        last_calc = Calculation.last_calc_to_history()
         return last_calc.get_result()
 
 

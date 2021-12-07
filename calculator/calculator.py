@@ -30,6 +30,6 @@ class Calculator:
         return True
 
     @staticmethod
-    def get_last_calc():
+    def get_last_calculation():
         """ Retrieving the last calculation stored """
         return Calculation.get_last_calc()

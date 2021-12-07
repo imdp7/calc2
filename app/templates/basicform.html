@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <h1>HTML Form</h1>
+
+    <form action="/basicform" method="POST">
+        <label for="valuea">Value 1:</label><br>
+        <input type="text" id="valuea" name="valuea" value="1"><br>
+        <label for="valueb">Value 2:</label><br>
+        <input type="text" id="valueb" name="valueb" value="2"><br>
+        <fieldset>
+        <legend>Operation</legend>
+          <div>
+            <input type="radio" name="sign" id="add_number" value="add_number" checked>
+            <label for="add_number">Addition</label>
+          </div>
+          <div>
+            <input type="radio" name="sign" id="subtract_number" value="subtract_number">
+            <label for="subtract_number">Subtraction</label>
+          </div>
+          <div>
+            <input type="radio" name="sign" id="multiply_numbers" value="multiply_numbers">
+            <label for="multiply_numbers">Multiplication</label>
+          </div>
+            <div>
+            <input type="radio" name="sign" id="divide_numbers" value="divide_numbers">
+            <label for="divide_numbers">Division</label>
+          </div>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

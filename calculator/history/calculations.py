@@ -4,6 +4,7 @@ from calculator.calculations.division import Division
 from calculator.calculations.multiplication import Multiplication
 from calculator.calculations.subtraction import Subtraction
 
+
 class Calculation:
     """ Calculation History Class """
     history = []

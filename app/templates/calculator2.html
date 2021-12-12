@@ -1,49 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Welcome to my calculator!{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important {
-            color: #336699;
-        }
-    </style>
 {% endblock %}
+
 {% block content %}
+    <div class="card card-size mx-auto text-center card-top-padding">
+      <h1>Web Calculator</h1>
 
-    <h1>My Calculator</h1>
-     {% if error %}
-         <div class="alert alert-danger error" role="alert">
-             {{ error }}
-        </div>
-      {% endif %}
-  <div class="mb-3 row">
-
-<form action="/calculator" method="POST">
-        <label for="valuea">Value 1:</label><br>
-        <input type="text" id="valuea" name="valuea" value="1"><br>
-        <label for="valueb">Value 2:</label><br>
-        <input type="text" id="valueb" name="valueb" value="2"><br>
-        <fieldset>
-        <legend>Operation</legend>
-          <div>
-            <input type="radio" name="operation" id="add_number" value="add_number" checked>
-            <label for="add_number">addition</label>
-          </div>
-          <div>
-            <input type="radio" name="operation" id="subtract_number" value="subtract_number">
-            <label for="subtract_number">subtraction</label>
-          </div>
-          <div>
-            <input type="radio" name="operation" id="multiply_numbers" value="multiply_numbers">
-            <label for="multiply_numbers">multiplication</label>
-          </div>
+      <form action="/calculator" method="post">
+          <label for="value1">Value 1:</label><br>
+          <input type="text" id="valuea" name="valuea" value="{{ valuea }}" autocomplete="off"><br>
+          <label for="value2">Value 2:</label><br>
+          <input type="text" id="valueb" name="valueb" value="{{ valueb }}" autocomplete="off"><br>
+          <fieldset>
+          <legend>Operation</legend>
             <div>
-            <input type="radio" name="operation" id="divide_numbers" value="divide_numbers">
-            <label for="divide_numbers">Division</label>
-          </div>
-        </fieldset>
+              <input type="radio" name="operation" id="add_number" value="add_number" checked>
+              <label for="add_number">Addition</label>
+            </div>
+            <div>
+              <input type="radio" name="operation" id="subtract_number" value="subtract_number">
+              <label for="subtract_number">Subtraction</label>
+            </div>
+            <div>
+              <input type="radio" name="operation" id="multiply_numbers" value="multiply_numbers">
+              <label for="multiply_numbers">Multiplication</label>
+            </div>
+            <div>
+              <input type="radio" name="operation" id="divide_numbers" value="divide_numbers">
+              <label for="divide_numbers">Division</label>
+            </div>
+          </fieldset>
 
-        <input type="submit" value="Submit">
-    </form>
-  </div>
+          <input class="btn btn-secondary" type="submit" value="Submit">
+      </form>
+    </div>
 {% endblock %}

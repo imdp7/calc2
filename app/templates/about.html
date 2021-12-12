@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}"/>
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>About</h1>
+    <p>This is the website for my History of The Internet Project as well as my articles for Object-Oriented Programming in
+        IS601. Below are outlines of each project.
+    </p>
+    <h5>My Web Calculator</h5>
+    <ul>
+        <li>A basic web calculator with arithmetic functions between two numbers</li>
+        <li>Each calculation is stored and saved in a CSV file visible to the viewer</li>
+    </ul>
+    <h5>Object-Oriented Programming</h5>
+    <ul>
+        <li>Beginner Tips and Tricks</li>
+        <li>AAA Testing</li>
+        <li>OOP Core Concepts</li>
+        <li>Separation of Concerns</li>
+    </ul>
+    <h1 class="text-center">The Author</h1>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 mx-auto d-flex justify-content-center">
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/CAHeadshot.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cody Azari</h5>
+                <p class="card-text">Cody is a lifelong learner dedicated to learning the secrets of programming</p>
+                <a href="https://www.linkedin.com/in/codyazari/" class="btn btn-primary">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

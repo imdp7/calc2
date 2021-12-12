@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block title %}Welcome to my calculator!{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>3 Tips and Tricks for Implementing Pylint (For a Beginner)</h1>
+    <p>
+        When starting to program, technical considerations are hardly ever a main point of concern, and why would they
+        be? At the very start of learning how to code, you are mainly trying to make sure your program just runs in the
+        intended way, much less stress testing it with thousands of data points. Once past the point of beginner,
+        the testing of your program becomes a major consideration, and one way to do that is by implementing Pylint.
+        From the Pylint documentation itself, "Pylint is a tool that checks for errors in Python code, tries to enforce
+        a coding standard and looks for code smells. It can also look for certain type errors, it can recommend
+        suggestions about how particular blocks can be refactored and can offer you details about the code's
+        complexity." Below, I will try to highlight 5 tips for a beginner starting to use Pylint.
+    </p>
+    <ol>
+        <li>Learn how to read the error messages!</li>
+            <ul>
+                <li>
+                    At no offense to you, coding is a difficult task, where many mistakes are bound to happen. You will
+                    certainly make many mistakes in your first program. These mistakes don't stop when you're experienced
+                    either! Therefore, learning the error messages will allow you to pinpoint and fix problems when
+                    detected
+                </li>
+            </ul>
+        <li>You can disable errors</li>
+            <ul>
+                <li>
+                    Say you write a program and Pylint constantly returns an irrelevant error message (which is not
+                    uncommon). You can signal to Pylint within your code with a # disable=whatever-error-message and it
+                    will not flag it as an error
+                </li>
+            </ul>
+        <li>Pylint is not the end-all-be-all of your code</li>
+            <ul>
+                <li>
+                    Seriously. Pylint is just a 2nd opinion. The information it gives is general, and was designed to
+                    be as all-encompassing for all kinds of code. Therefore, some errors it gives may not be indicative
+                    of your own code. In some contexts, the errors may be devastating, whereas in others, it may not
+                    prove to be a problem. Make sure  you double-check before coming to these conclusions and continue \
+                    on your merry way.
+                </li>
+            </ul>
+    </ol>
+    <img src="">
+    <h2>OOP Glossary</h2>
+    <p>
+        Below will be a detailed list of Object-Oriented Programming terminology with their corresponding definitions,
+        for your use.
+    </p>
+    <ul>
+        <li>
+            <b>Encapsulation:</b> a core principle of OOP. The natural division of labor within your program,
+            allocating different tasks to different parts of your program
+        </li>
+        <li>
+            <b>Abstraction:</b> a core principle of OOP. Users can only indirectly change the state of a method or class
+            to improve security. A classes internal data and functions are hidden from the user
+        </li>
+        <li>
+            <b>Inheritance:</b> a core principle of OOP. You can have a 'parent' class and 'children' classes, where
+            the children inherit all or some attributes of the parents while also using their own methods
+        </li>
+        <li>
+            <b>Polymorphism:</b> a core principle of OOP. The interpreter of the language will be able to tell the difference
+            between many similar named classes and methods and return the proper data
+        </li>
+        <li>
+            <b>Class:</b> a template of data that can be replicated many times.
+        </li>
+        <li>
+            <b>Object:</b> the result of the replicated class. When a class is called from code and instantiated with a
+            variable, it becomes an object of the class
+        </li>
+        <li>
+            <b>Method:</b> a function that belongs to a class. When that function is called, it is considered a method
+        </li>
+        <li>
+            <b>Factory:</b> an object which creates other objects, utilizing poly,morphism to accomplish a task
+        </li>
+        <li>
+            <b>Instantiation:</b> the creation of an object. When an object is created from a class, the object is
+            instantiated
+        </li>
+        <li>
+            <b>Namespace:</b> when a class is instantiated with an equivalence to a certain variable, the pair and
+            subsequent pairs with the program can be considered a namespace
+        </li>
+        <li
+        ><b>Constructor:</b> this is a method within Python that initializes and assign values in a class when it is
+            created.
+        </li>
+        <li>
+            <b>Fixture:</b> primarily used for testing. This is a piece of code that will run everytime a test is executed
+        </li>
+        <li>
+            <b>Type Hint:</b> quite literally it's name, you tell give Python a hint as to which type of object
+            should be utilized when a program is run. Helps increase predictability with extremely large and complex
+            programs
+        </li>
+        <li>
+            <b>Type Cast:</b> having the ability to specify the type of data Python should read information as, similar
+            to type hinting with classes. Also having the ability to convert data types
+        </li>
+        <li>
+            <b>Unit Test:</b> testing individual aspects of a program, such as specific functions and classes without
+            running the full program
+        </li>
+        <li>
+            <b>Static:</b> functions that are specific to a file, and subsequently cannot be seen by functions outside of
+            the file
+        </li>
+        <li>
+            <b>Facade:</b> a design pattern to structure code. It simplifies the interface to a complex set of classes
+        </li>
+        <li>
+            <b>Property:</b> a set of methods which 'get' a value and 'set' the new value
+        </li>
+        <li>
+            <b>Tuple:</b> a common data structure that consists of a set of items with a specific order that are
+            unchangeable
+        </li>
+        <li>
+            <b>Decorator Method:</b> a design pattern to structure code. Adds functionality to a class without directly
+            changing it
+        </li>
+    </ul>
+</div>
+{% endblock %}

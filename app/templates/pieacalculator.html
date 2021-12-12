@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Welcome to my calculator!{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>The Four Principles of Object-Oriented Programming - Calculator Edition!</h1>
+
+  <h3 class="lead">An Introduction</h3>
+  <p>
+    If you've tried your hand at coding, it's very likely that you've seen or heard the term "Object-Oriented
+    Programming" thrown around. Not only that, but you've probably heard some very vague explanations with some
+    confusing analogies following it, leaving you only more confused in your desk chair. Don't fret! I and most other
+    programmers were just as confused as you when we started, and it still confuses me today! My goal here today is to
+    demonstrate the main principles of Object-Oriented Programming (I'll call it OOP from now on) so that you can begin
+    to piece it together!
+  </p>
+
+  <h3 class="lead">What is Object-Oriented Programming?</h3>
+  <p>
+    To clear up any misconceptions from the jump, OOP is NOT a well-defined set of code that can be copied and pasted
+    from program to program. OOP, rather, is a framework of 4 concepts that should be applied to your own projects when
+    applicable. These 4 concepts are as follows:
+  </p>
+  <ul>
+    <li>Encapsulation</li>
+    <li>Abstraction</li>
+    <li>Inheritance</li>
+    <li>Polymorphism</li>
+  </ul>
+  <p>
+    Alongside these 4 principles, OOP makes liberal use of <b>classes</b> and <b>objects</b>, two important parts of any
+    programming language. Before getting into the nitty gritty of OOP, it is quite important to understand what classes
+    and objects are and their job in a program. I'll start with classes, then flow into objects. Classes in any
+    programming language can be thought of as a template which contains information that can be replicated any number
+    of times. This in itself is a powerful tool, because it allows a programmer to only write one block of code and
+    continuously use it and the information inside it. The usage of the class creates an object, or an <i>instance</i>
+    of the class. To illustrate, below is the code for an addition class. In it, it contains the information to add
+    numbers and, when called, will produce an instance of the addition class, also known as an object.
+  </p>
+  <img src="static/class.PNG" class="rounded mx-auto d-block">
+  <h3 class="lead">Encapsulation</h3>
+  <p>
+    This leads into one of the core principles of OOP, encapsulation. Encapsulation is the natural division of labor
+    within the program you are writing. Or in other words, think of a large corporation, with many divisions. Some work
+    on the financial aspects of the company, others work on product development, customer service and so on. When these
+    divisions need to work with each other or need data from one another, they will put in a request for the specific
+    data, then it will be given. This is encapsulation, where a program will have multiple classes, each responsible for
+    their own data. When data or information is needed, it will call data from another class using a method. This has
+    the added benefit of being more secure, because a classes data or "state" cannot be access and changed, intentionally
+    or unintentionally. This can be seen above in a program for a calculator. Instead of having one function wholly in-
+    charge of all mathematical functions, we can split each function up with regard to its mathematical operation. This
+    concept can be seen below, where one method is in charge of addition. (See @staticmethod add_number)
+  </p>
+  <img src="static/encapsulation.PNG" class="rounded mx-auto d-block">
+
+  <h3 class="lead">Inheritance</h3>
+  <p>
+    Now back to this company and it's divisions. The financial division in the company is in charge of all financial
+    doings in the company. However, financials in a large company is quite a complex operation, likely with many
+    sub-divisions in the parent. These sub-divisions in the financial division are still similar and do similar things
+    to the parent division, only with minor tweaks in procedures, operations, and labors. This is inheritance. You can
+    write a parent class, each with children that inherit characteristics from the parent, but also have their own
+    attributes and functions. To go back to the calculator, we can build a general class that handles calculations,
+    and subsequently make mathematical operations (children classes) that inherit the same data types from its
+    calculation class (it's parent). So, we have a Calculation parent which can be thought of as a blank equation with
+    only an equal sign to be filled in with the user's calculation. Then we have addition, subtraction, multiplication,
+    and division as it's children (which is subsequently the user filling in what mathematical operation will take place),
+    all of which ultimately give a result to the user after the program is run. Below, we can see a parent class <i>Calculation</i>,
+    which essentially builds the template for all other mathematical functions to follow. It's child class <i>Addition</i>
+    can be seen above.
+  </p>
+  <div class="form-inline">
+    <a title="Pronesto, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Subclasses.png"><img width="256" alt="Subclasses" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Subclasses.png" class="rounded mx-auto"></a>
+    <img src="static/calculation.PNG" class="rounded mx-auto">
+  </div>
+  <h3 class="lead">Polymorphism</h3>
+  <p>
+    Now we find ourselves at polymorphism. Polymorphism, from its Greek roots, means <i>many shapes</i>. Now, you may
+    ask, how does this relate to programming? Well, often in programming, some methods will have similar structures,
+    even with similar methods (functions within classes). You may ask, how does the program differentiate between these
+    methods with the same names, and still respond with the correct information? This is polymorphism at work! When a
+    program is run, the interpreter (what reads, understands, and responds to your code) actually can determine which
+    class, method, and lines of code to run just from the code itself! So to see polymorphism in a realtime example, I'll
+    refer back to the calculator. In the example for inheritance, that can ultimately be considered polymorphism as well!
+    Since the Calculation class is running multiple instances of itself with different mathematical operations, the
+    computer should have a hard time differentiating which results to return, right? Nope! Polymorphism lets the
+    computer determine which operations to return based on its children classes.
+  </p>
+
+  <h3 class="lead">Abstraction</h3>
+  <p>
+    And now last but certainly not least, we stumble upon abstraction. Abstraction is another way for a programmer to
+    increase the security of the program they are writing. To start, lets think of a phone. We use it on almost an hourly
+    basis, surfing the web, listening to music, writing emails, etc. However, we don't necessarily know how the phone works.
+    We are unsure of how the hardware powering the device works, nor do we know how the software was built, yet we use it
+    still. This, at its heart, is abstraction. Abstraction is providing the user of the program or device functionality
+    over it, but does not allow the average person to accidentally alter the things that power it in any meaningful way.
+    To refer back to the calculator example, it would be quite a hassle if we were to give an average person the raw
+    code to the calculator. Not only would they not know how to get meaningful use out of the calculator(because of
+    their lack of knowledge of coding), they would also have a high chance of altering the raw code and crashing the
+    calculator completely. So instead, we design a graphical interface for the calculator, with all the numbers and
+    functions of the calculator, increasing the usability of the calculator and decreasing the likelihood of the program
+    breaking.
+  </p>
+  <a title="Johannes Maximilian, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:IPhone_6_display_removed_1.jpg"><img width="512" alt="IPhone 6 display removed 1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/IPhone_6_display_removed_1.jpg/512px-IPhone_6_display_removed_1.jpg" class="rounded mx-auto d-block"></a>
+</div>
+{% endblock %}

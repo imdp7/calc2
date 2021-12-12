@@ -28,31 +28,23 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/calculator">Web Calculator</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="inventionoftheinternet.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        History
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="miniseries.html">The Internet Mini-Series</a></li>
-                        <li><a class="dropdown-item" href="browserwars.html">Browser Wars</a></li>
-                        <li><a class="dropdown-item" href="internetsearch.html">Internet Search</a></li>
-                        <li><a class="dropdown-item" href="dotcombubble.html">Dot Com Bubble</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/data_table">Stored Calculations</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Object-Oriented Programming
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="tipsandtricks.html">Beginner Tips and Tricks</a></li>
-                        <li><a class="dropdown-item" href="aaatesting.html">AAA Testing</a></li>
-                        <li><a class="dropdown-item" href="pieacalculator.html">OOP Core Concepts</a></li>
-                        <li><a class="dropdown-item" href="separationofconcerns.html">Separation of Concerns</a></li>
+                        <li><a class="dropdown-item" href="/tipsandtricks">Beginner Tips and Tricks</a></li>
+                        <li><a class="dropdown-item" href="/aaatesting">AAA Testing</a></li>
+                        <li><a class="dropdown-item" href="/pieacalculator">OOP Core Concepts</a></li>
+                        <li><a class="dropdown-item" href="/separationofconcerns">Separation of Concerns</a></li>
                     </ul>
                 </li>
             </ul>
@@ -63,10 +55,10 @@
   {% if messages %}
     <ul class=flashes>
         {% for message in messages %}
-          <div class="alert alert-success alert-dismissible fade show container" role="alert">
-            Your calculation has been successfully processed
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
+            <div class="alert alert-success alert-dismissible fade show container">
+                <strong>Success!</strong> Your calulation has been processed successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
         {% endfor %}
     </ul>
   {% endif %}

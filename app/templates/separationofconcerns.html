@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Welcome to my calculator!{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>The Seperation of Concerns</h1>
+    <h3 class="lead">Introduction</h3>
+    <p>
+        Object-oriented programming is a methodology for writing an organized, cohesive program. The core principles of
+        OOP all imply a minimum level of organization in which to write a program. To exaggerate the point, you wouldn't
+        keep your apples and your toolset in the same cabinet would you? You would keep the apples in the kitchen with
+        the other fruits while your toolset would go in the garage with your other tools. Likewise, you wouldn't build
+        a workshop in the kitchen and cook in the garage. In programming, this organization of like goes with like is
+        what is known as the separation of concerns. Similar to encapsulation, a program should always strive to divide
+        up work based on certain tasks.
+    </p>
+    <div>
+        <img src="static/filestructure.PNG" class="rounded mx-auto d-block">
+    </div>
+    <h3 class="lead">Why It's Important</h3>
+    <p>
+        This level of organization may seem tedious or overemphasized. The importance, however, of a well-organized and
+        well-written program cannot be overstated. To give a more realistic example, I'll refer to the calculator's file
+        structure (shown above) that has been mentioned in previous articles. While not shown in the previous examples, pictured
+        above is the file-structure of the calculator's code. Here, you can see a general calculator file, with 2 files
+        within alongside a calculator.py file and an __init__.py file. Already, a general organization structure can
+        be seen from the files. The calculator.py file is the main file where all the work comes together. Further, a
+        calculations folder and a history folder can be found inside, where the calculations' folder is in charge of the
+        math aspect of the calculator and the history folder is in charge of the lesser functionality of the calculator.
+        This separation of concern is beneficial especially for reusing code. Say you are writing another program with
+        calculator functionality. Instead of having to parse through disorganized files and refactor code, you would be
+        able to copy and paste the existing folders into your new projects, and with small tweaks to your code, you would
+        be able to copy and paste your calculator in a completely different project.
+    </p>
+</div>
+{% endblock %}

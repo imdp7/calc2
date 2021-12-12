@@ -6,6 +6,9 @@ I believe this error is a false positive
 ![image](app/static/flashtest.PNG)
 ![image](app/static/flashtest2.PNG)
 Here are my flash notifications in my web app
+
+![video](app/static/WebCalcPreview.mp4)
+![image](app/static/tests.PNG)
 Run Pip Install
 pip install -r requirements.txt
 

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+  <div class="container">
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Record</th>
+        <th>Value 1</th>
+        <th>Value 2</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in range(data.record|length) %}
+        <tr>
+          <td>{{ data.record[i] }}</td>
+          <td>{{ data.valuea[i] }}</td>
+          <td>{{ data.valueb[i] }}</td>
+          <td>{{ data.operation[i] }}</td>
+          <td>{{ data.valuec[i] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+{% endblock %}
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+  {% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          {searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          null],
+      });
+    });
+  </script>
+  {% endblock %}
+</body>

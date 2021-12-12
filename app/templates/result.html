@@ -2,17 +2,33 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
 {% endblock %}
 {% block content %}
-<div>
-    <h1>result</h1>
-    <strong>Value 1: </strong> {{ valuea }} <br>
-    <strong>Value 2: </strong> {{ valueb }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ valuec }}
+<div class="container">
+<h1>Result Table</h1>
+      <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Value 1</th>
+        <th>Value 2</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+{# {% for user in users %} #}
+        <tr>
+          <td>{{ valuea }}</td>
+          <td>{{ valueb }}</td>
+          <td>{{ operation }}</td>
+          <td>{{ valuec }}</td>
+        </tr>
+{# {% endfor %} #}
+    </tbody>
+  </table>
+{#    <strong>Value 1: </strong> {{ value1 }} <br>#}
+{#    <strong>Value 2: </strong> {{ value2 }} <br>#}
+{#    <strong>Operation: </strong> {{ operation }} <br>#}
+{#    <strong>Result: </strong> {{ valuec }}#}
 </div>
-
 {% endblock %}

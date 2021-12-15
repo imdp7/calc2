@@ -1,12 +1,11 @@
-""" Subtraction Tests """
-from calculator.calculations.subtraction import Subtraction
+"""Testing Subtraction"""
+from calc.calculations.subtraction import Subtraction
 
-
-def subtraction_test_calculation():
-    """" testing static method for subtraction """
-    # Arrange
-    numbers = (10.0, 10.0)
-    subtraction = Subtraction(numbers)
-    # Act
-    # Assert
-    assert subtraction.get_result() == 0
+def test_calculation_subtraction():
+    """testing that our calculator has a static method for subtraction"""
+    #Arrange
+    mynumbers = (10.0,5.0,2.5)
+    subtraction = Subtraction(mynumbers)
+    #Act
+    #Assert
+    assert subtraction.get_result() == -17.5

@@ -1,7 +1,7 @@
 """Testing the Calculator"""
 import pytest
 from calculator.calculator import Calculator
-from calculator.history.calculations import Calculations
+from calculator.history.calculation import Calculations
 @pytest.fixture
 def clear_history_fixture():
     """define a function that will run each time you pass it to a test, it is called a fixture"""

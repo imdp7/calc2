@@ -1,12 +1,11 @@
-""" divides two numbers """
+"""Division Class"""
 from calculator.calculations.calculation import Calculation
 
-
 class Division(Calculation):
-    """ divides two numbers """
+    """Division calculation object"""
     def get_result(self):
-        """ divides two numbers """
+        """get the division results"""
         result = 1.0
-        for value in self.vals:
-            result = value / result
-        return result
+        for value in self.values:
+            result = result / value
+        return 

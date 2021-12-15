@@ -1,49 +1,49 @@
-""" Testing Calculator """
+"""Testing the Calculator"""
 import pytest
-from calculator.history.calculations import Calculation
-from calculator.calculations.addition import Addition
+from calc.history.calculations import Calculations
+from calc.calculations.addition import Addition
 
 @pytest.fixture
 def clear_history_fixture():
-    """ Clears history after each run """
-    Calculation.empty_history()
-@pytest.fixture
-def setup_addition_calc_fixture():
-    """ Runs each time a test is passed through it """
+    """define a function that will run each time you pass it to a test, it is called a fixture"""
     # pylint: disable=redefined-outer-name
-    values = (5, 4)
+    Calculations.clear_history()
+@pytest.fixture
+def setup_addition_calculation_fixture():
+    """define a function that will run each time you pass it to a test, it is called a fixture"""
+    # pylint: disable=redefined-outer-name
+    values = (1, 2)
     addition = Addition(values)
-    Calculation.add_to_history(addition)
+    Calculations.add_calculation(addition)
 
-def add_calc_to_history_test(clear_history_fixture, setup_addition_calc_fixture):
-    """ Testing if clear history returns true """
+def test_add_calculation_to_history(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing clear history returns true for success"""
     # pylint: disable=unused-argument,redefined-outer-name,singleton-comparison
-    assert Calculation.history_count() == 1
+    assert Calculations.count_history() == 1
 
-def clear_history_calculation_test(clear_history_fixture, setup_addition_calc_fixture):
+def test_clear_calculation_history(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing clear history returns true for success"""
     # pylint: disable=unused-argument,redefined-outer-name,singleton-comparison
-    """ testing if history can be cleared """
-    assert Calculation.history_count() == 1
-    Calculation.empty_history()
-    assert Calculation.history_count() == 0
-    assert Calculation.empty_history() == True
+    assert Calculations.count_history() == 1
+    Calculations.clear_history()
+    assert Calculations.count_history() == 0
+    assert Calculations.clear_history() is True
 
-def get_calculation_test(clear_history_fixture, setup_addition_calc_fixture):
-    """ Testing if it is possible to get a specific calculation from the history """
+def test_get_calculation(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing getting a specific calculation out of the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculation.get_calculation(0).get_result() == 3
+    assert Calculations.get_calculation(0).get_result() == 3
 
-def get_last_calculation_test(clear_history_fixture, setup_addition_calc_fixture):
-    """ testing obtaining the last calculation from history """
+def test_get_calculation_last(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculation.last_calc_to_history().get_result() == 3
+    assert Calculations.get_last_calculation().get_result() == 3
 
-def get_first_calculation_test(clear_history_fixture, setup_addition_calc_fixture):
-    """ testing obtaining the first calculation from history """
+def test_get_calculation_first(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculation.first_calc_to_history().get_result() == 3
-
-def history_count_test():
-    """ testing if history is tracking calculations """
+    assert Calculations.get_first_calculation().get_result() == 3
+def test_history_count(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculation.history_count() == 1
+    assert Calculations.count_history() == 1

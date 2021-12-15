@@ -1,4 +1,4 @@
-from calculator.main import Calculator
+from calculator.calculator import Calculator
 import pytest
 
 def test_calculator_result():

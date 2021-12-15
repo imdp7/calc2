@@ -1,40 +1,30 @@
-""" Calculation History Class """
-class Calculation:
-    """ Calculation History Class """
+"""Calculation history Class"""
+class Calculations:
+    """Calculation history Class"""
     history = []
     # pylint: disable=too-few-public-methods
     @staticmethod
-    def empty_history():
-        """ clears history function """
-        Calculation.history.clear()
+    def clear_history():
+        """ clear the history list"""
+        Calculations.history.clear()
         return True
-
-
     @staticmethod
-    def add_to_history(calculation):
-        """ adds the calculation to history when called """
-        return Calculation.history.append(calculation)
-
-
+    def count_history():
+        """ get the length of history list"""
+        return len(Calculations.history)
     @staticmethod
-    def history_count():
-        """ however many calculations have been stored in the array """
-        return len(Calculation.history)
-
-
+    def get_last_calculation():
+        """ get the latest calculation from history"""
+        return Calculations.history[-1]
+    @staticmethod
+    def get_first_calculation():
+        """ get the first calculation from history"""
+        return Calculations.history[0]
     @staticmethod
     def get_calculation(num):
-        """ calling the previous calculation """
-        return Calculation.history[num]
-
-
+        """ get a specific calculation from history"""
+        return Calculations.history[num]
     @staticmethod
-    def last_calc_to_history():
-        """ returns the last calc in the array """
-        return Calculation.history[-1]
-
-
-    @staticmethod
-    def first_calc_to_history():
-        """ adds the first calculation to history """
-        return Calculation.history[0]
+    def add_calculation(calculation):
+        """ get a specific calculation from history"""
+        return Calculations.history.append(calculation)

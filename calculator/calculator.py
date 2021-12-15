@@ -1,9 +1,9 @@
 """ This is the increment function"""
-from calc.calculations.addition import Addition
-from calc.calculations.subtraction import Subtraction
-from calc.calculations.multiplication import Multiplication
-from calc.history.calculations import Calculations
-from calc.calculations.division import Division
+from calculator.calculations.addition import Addition
+from calculator.calculations.subtraction import Subtraction
+from calculator.calculations.multiplication import Multiplication
+from calculator.history.calculations import Calculations
+from calculator.calculations.division import Division
 
 class Calculator:
     """ This is the Calculator class"""

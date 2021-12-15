@@ -1,38 +1,34 @@
 """ This is the increment function"""
-from calculator.calculations.addition import Addition
-from calculator.calculations.subtraction import Subtraction
-from calculator.calculations.multiplication import Multiplication
-from calculator.calculations.division import Division
-from calculator.history.calculations import Calculation
-
+from calc.calculations.addition import Addition
+from calc.calculations.subtraction import Subtraction
+from calc.calculations.multiplication import Multiplication
+from calc.history.calculations import Calculations
+from calc.calculations.division import Division
 
 class Calculator:
     """ This is the Calculator class"""
-
     @staticmethod
-    def add_number(*args):
-        """ adds number to result"""
+    def add_numbers(*args):
+        """ adds list of numbers"""
         calculation = Addition(args)
-        Calculation.add_to_history(calculation)
+        Calculations.add_calculation(calculation)
         return calculation.get_result()
-
     @staticmethod
-    def subtract_number(*args):
-        """ subtract number from result"""
+    def subtract_numbers(*args):
+        """ subtract a list of numbers from result"""
         calculation = Subtraction(args)
-        Calculation.add_to_history(calculation)
+        Calculations.add_calculation(calculation)
         return calculation.get_result()
-
     @staticmethod
     def multiply_numbers(*args):
-        """ multiply two numbers and store the result"""
+        """ multiplication number from result"""
         calculation = Multiplication(args)
-        Calculation.add_to_history(calculation)
+        Calculations.add_calculation(calculation)
         return calculation.get_result()
-
     @staticmethod
     def divide_numbers(*args):
-        """divide two numbers and store the result"""
+        """ Division number from result"""
         calculation = Division(args)
-        Calculation.add_to_history(calculation)
+        Calculations.add_calculation(calculation)
+
         return calculation.get_result()
